@@ -42,4 +42,6 @@ public class AccountActivityPage {
     @FindBy(id = "aa_description")
     public WebElement descriptionBox;
 
+
+
 }

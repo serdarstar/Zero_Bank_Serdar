@@ -35,11 +35,18 @@ Feature: Find Transactions in   Account    Activity
     And clicks search
     Then the results table should not show descriptions containing "online"
 #    en son kisim fail oluyor cunku description box case insensitive degil, ONLINE yerine online yazinca sonuc bulmuyor, bug var
-  @acc
+
   Scenario: Type
     When clicks search
     Then the results should show at least one result under Deposit
     And the results should show at least one result under Withdrawal
+    When the user selects type "Deposit"
+    Then the results should show at least one result under Deposit
+    And the results show no result under Withdrawal
+    When the user selects type "Withdrawal"
+    Then the results should show at least one result under Withdrawal
+    And the results should show no result under Deposit
+
 
 
 

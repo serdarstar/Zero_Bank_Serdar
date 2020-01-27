@@ -21,5 +21,15 @@ Feature: Purchase foreign currency
       | Japan (yen)           |
       | Mexico (peso)         |
       | Norway (krone)        |
-      | New  Zealand (dollar)  |
+      | New  Zealand (dollar) |
       | Singapore (dollar)    |
+
+    Scenario: Error message for not selecting currency
+      Given the user is on the Purchase Foreign Currency tab
+      When the user tries to calculate cost without selecting a currency
+      Then error message should be displayed
+  @acc
+  Scenario: Error message for not entering value
+    Given the user is on the Purchase Foreign Currency tab
+    When the user tries to calculate cost without entering value
+    Then error message should be displayed

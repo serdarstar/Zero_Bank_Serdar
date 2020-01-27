@@ -21,6 +21,7 @@ import java.util.*;
 public class AccountPage_StepDefs {
     AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
     AccountActivityPage accountActivityPage = new AccountActivityPage();
+    PayBillsPage payBillsPage=new PayBillsPage();
     WebDriver driver = Driver.get();
 
     @Then("Account page title must be verified")
@@ -553,6 +554,43 @@ public class AccountPage_StepDefs {
             depositCellValues2.add(depositCellValues.get(i).getText());
         }
 
+
+
+        System.out.println(depositCellValues2.toString());
+        Assert.assertNotEquals(depositCellValues2.size(),0);
+
+
+
+    }
+
+    @And("the results should show at least one result under Withdrawal")
+    public void theResultsShouldShowAtLeastOneResultUnderWithdrawal() {
+
+        List<WebElement> withdrawalCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[4]"));
+        List<String> withdrawalCellValues2=new ArrayList<>();
+        for (int i = 0; i < withdrawalCellValues.size(); i++) {
+            withdrawalCellValues2.add(withdrawalCellValues.get(i).getText());
+
+
+        }
+        System.out.println(withdrawalCellValues2.toString());
+        Assert.assertNotEquals(withdrawalCellValues2.size(),0);
+
+    }
+
+
+
+    @When("the user selects type Deposit")
+    public void theUserSelectsTypeDeposit() {
+        Select select=new Select((WebElement) driver.findElements(By.id("aa_type")));
+        select.selectByVisibleText("Deposit");
+
+        List<WebElement> depositCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[3]"));
+        List<String> depositCellValues2=new ArrayList<>();
+        for (int i = 0; i < depositCellValues.size(); i++) {
+            depositCellValues2.add(depositCellValues.get(i).getText());
+        }
+
         List<WebElement> withdrawalCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[4]"));
         List<String> withdrawalCellValues2=new ArrayList<>();
         for (int i = 0; i < withdrawalCellValues.size(); i++) {
@@ -562,13 +600,66 @@ public class AccountPage_StepDefs {
         System.out.println(depositCellValues2.toString());
         System.out.println(withdrawalCellValues2.toString());
         Assert.assertNotEquals(depositCellValues2.size(),0);
-        Assert.assertNotEquals(withdrawalCellValues2.size(),0);
+        Assert.assertEquals(withdrawalCellValues2.size(),0);
+    }
 
+    @When("the user selects type {string}")
+    public void theUserSelectsType(String arg0) {
+        WebElement account=driver.findElement(By.id("aa_type"));
+        Select select=new Select(account);
+        select.selectByVisibleText(arg0);
+    }
+
+    @And("the results show no result under Withdrawal")
+    public void theResultsShowNoResultUnderWithdrawal() {
+        List<WebElement> withdrawalCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[4]"));
+        List<String> withdrawalCellValues2=new ArrayList<>();
+        for (int i = 0; i < withdrawalCellValues.size(); i++) {
+            withdrawalCellValues2.add(withdrawalCellValues.get(i).getText());
+
+
+        }
+        System.out.println(withdrawalCellValues2.toString());
+        Assert.assertNotEquals(withdrawalCellValues2.size(),0);
+    }
+
+    @And("the results should show no result under Deposit")
+    public void theResultsShouldShowNoResultUnderDeposit() {
+        PayBillsPage payBillsPage=new PayBillsPage();
+        List<WebElement> depositCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[3]"));
+        List<String> depositCellValues2=new ArrayList<>();
+        for (int i = 0; i < depositCellValues.size(); i++) {
+            depositCellValues2.add(depositCellValues.get(i).getText());
+        }
+        System.out.println(depositCellValues2.toString());
+        Assert.assertNotEquals(depositCellValues2.size(),0);
+    }
+
+    @When("the user tries to calculate cost without selecting a currency")
+    public void theUserTriesToCalculateCostWithoutSelectingACurrency() {
+        BrowserUtils.waitFor(2);
+        payBillsPage.currencyAmount.sendKeys("20");
+        payBillsPage.calculateCost.click();
 
 
     }
 
-    @And("the results should show at least one result under Withdrawal")
-    public void theResultsShouldShowAtLeastOneResultUnderWithdrawal() {
+    @Then("error message should be displayed")
+    public void errorMessageShouldBeDisplayed() {
+        BrowserUtils.waitFor(2);
+        Alert alert = Driver.get().switchTo().alert();
+        String actual=alert.getText();
+        alert.accept();
+        String expected="Please, ensure that you have filled all the required fields with valid values.";
+        Assert.assertEquals(expected,actual);
+//        System.out.println(alert.getText());
+    }
+
+    @When("the user tries to calculate cost without entering value")
+    public void theUserTriesToCalculateCostWithoutEnteringValue() {
+        BrowserUtils.waitFor(2);
+        Select select=new Select(payBillsPage.currencyDropdown);
+        select.selectByVisibleText("Select One");
+        payBillsPage.calculateCost.click();
     }
 }

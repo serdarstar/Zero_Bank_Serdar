@@ -50,5 +50,11 @@ public class PayBillsPage {
     @FindBy(id = "pc_currency")
     public WebElement currencyDropdown;
 
+    @FindBy(id="pc_amount")
+    public WebElement currencyAmount;
+
+    @FindBy(id = "pc_calculate_costs")
+    public WebElement calculateCost;
+
 
 }

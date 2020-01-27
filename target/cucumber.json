@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 10683334500,
+              "duration": 7521545300,
               "status": "passed"
             },
             "line": 4,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 396323900,
+              "duration": 170323400,
               "status": "passed"
             },
             "line": 5,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 1460856900,
+              "duration": 1006717000,
               "status": "passed"
             },
             "line": 6,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 956543900,
+              "duration": 620580400,
               "status": "passed"
             },
             "line": 7,
@@ -59,28 +59,28 @@
           },
           {
             "result": {
-              "duration": 1222201700,
+              "duration": 326095800,
               "status": "passed"
             },
             "line": 8,
-            "name": "the    user   accesses   the    Find   Transactions   tab",
+            "name": "the user navigates to pay bill tab",
             "match": {
-              "location": "AccountPage_StepDefs.theUserAccessesTheFindTransactionsTab()"
+              "location": "AccountPage_StepDefs.theUserNavigatesToPayBillTab()"
             },
-            "keyword": "Given "
+            "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-01-27T14:49:19.881Z",
-        "line": 39,
-        "name": "Type",
+        "start_timestamp": "2020-01-27T18:04:54.148Z",
+        "line": 32,
+        "name": "Error message for not entering value",
         "description": "",
-        "id": "find-transactions-in---account----activity;type",
+        "id": "purchase-foreign-currency;error-message-for-not-entering-value",
         "after": [
           {
             "result": {
-              "duration": 3809213600,
+              "duration": 3700686600,
               "status": "passed"
             },
             "match": {
@@ -93,39 +93,39 @@
         "steps": [
           {
             "result": {
-              "duration": 2177245200,
+              "duration": 80354100,
               "status": "passed"
             },
-            "line": 40,
-            "name": "clicks search",
+            "line": 33,
+            "name": "the user is on the Purchase Foreign Currency tab",
             "match": {
-              "location": "AccountPage_StepDefs.clicksSearch()"
+              "location": "AccountPage_StepDefs.theUserIsOnThePurchaseForeignCurrencyTab()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2217214200,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "the user tries to calculate cost without entering value",
+            "match": {
+              "location": "AccountPage_StepDefs.theUserTriesToCalculateCostWithoutEnteringValue()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 405476900,
+              "duration": 2011688400,
               "status": "passed"
             },
-            "line": 41,
-            "name": "the results should show at least one result under Deposit",
+            "line": 35,
+            "name": "error message should be displayed",
             "match": {
-              "location": "AccountPage_StepDefs.theResultsShouldShowAtLeastOneResultUnderDeposit()"
+              "location": "AccountPage_StepDefs.errorMessageShouldBeDisplayed()"
             },
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 65300,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "the results should show at least one result under Withdrawal",
-            "match": {
-              "location": "AccountPage_StepDefs.theResultsShouldShowAtLeastOneResultUnderWithdrawal()"
-            },
-            "keyword": "And "
           }
         ],
         "tags": [
@@ -135,11 +135,11 @@
         ]
       }
     ],
-    "name": "Find Transactions in   Account    Activity",
+    "name": "Purchase foreign currency",
     "description": "",
-    "id": "find-transactions-in---account----activity",
+    "id": "purchase-foreign-currency",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/FindTransactions.feature",
+    "uri": "file:src/test/resources/features/Purchase%20Foreign%20Currency.feature",
     "tags": []
   }
 ]
