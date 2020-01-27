@@ -1,0 +1,223 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 7431009400,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user sign in succesfully",
+            "match": {
+              "location": "LoginStepDefs.theUserSignInSuccesfully()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 178437400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user sends login info",
+            "match": {
+              "location": "LoginStepDefs.theUserSendsLoginInfo()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1034318000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user logs in succesfully",
+            "match": {
+              "location": "LoginStepDefs.theUserLogsInSuccesfully()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 575208500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the user is on Account Activity page",
+            "match": {
+              "location": "AccountPage_StepDefs.theUserIsOnAccountActivityPage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-01-27T00:34:29.046Z",
+        "line": 21,
+        "name": "search",
+        "description": "",
+        "id": "find-transactions-in---account----activity;search",
+        "after": [
+          {
+            "result": {
+              "duration": 3653280000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1079157300,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "the    user   accesses   the    Find   Transactions   tab",
+            "match": {
+              "location": "AccountPage_StepDefs.theUserAccessesTheFindTransactionsTab()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2102839400,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the user enters description \"ONLINE\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"ONLINE\"",
+                  "offset": 28
+                }
+              ],
+              "location": "AccountPage_StepDefs.theUserEntersDescription(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2071609800,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "clicks search",
+            "match": {
+              "location": "AccountPage_StepDefs.clicksSearch()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2115771800,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "the results should only have \"ONLINE\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"ONLINE\"",
+                  "offset": 29
+                }
+              ],
+              "location": "AccountPage_StepDefs.theResultsShouldOnlyHave(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2072259000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "the user enters description \"OFFICE\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"OFFICE\"",
+                  "offset": 28
+                }
+              ],
+              "location": "AccountPage_StepDefs.theUserEntersDescription(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2049241300,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "clicks search",
+            "match": {
+              "location": "AccountPage_StepDefs.clicksSearch()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2070513500,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "the results should only have \"OFFICE\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"OFFICE\"",
+                  "offset": 29
+                }
+              ],
+              "location": "AccountPage_StepDefs.theResultsShouldOnlyHave(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2030819800,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "the results table should not show descriptions containing \"OFFICE\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"OFFICE\"",
+                  "offset": 58
+                }
+              ],
+              "location": "AccountPage_StepDefs.theResultsTableShouldNotShowDescriptionsContaining(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@acc"
+          }
+        ]
+      }
+    ],
+    "name": "Find Transactions in   Account    Activity",
+    "description": "",
+    "id": "find-transactions-in---account----activity",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/FindTransactions.feature",
+    "tags": []
+  }
+]

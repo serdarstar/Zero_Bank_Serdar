@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.zerobank.runners.CukesRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.172 s <<< FAILURE! - in com.zerobank.runners.CukesRunner
+initializationError(com.zerobank.runners.CukesRunner)  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.IllegalArgumentException: Not a file or directory: C:\Users\User\IdeaProjects\zerobankautomation\src\test\resources\features
+
