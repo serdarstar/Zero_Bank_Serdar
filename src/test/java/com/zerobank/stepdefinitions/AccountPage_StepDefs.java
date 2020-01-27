@@ -128,21 +128,20 @@ public class AccountPage_StepDefs {
 
     @Then("Amount and date should be correct type")
     public void amountAndDateShouldBeCorrectType() {
-        PayBillsPage payBillsPage = new PayBillsPage();
-        System.out.println(payBillsPage.dateBox.getText());
-
-
+        PayBillsPage payBillsPage=new PayBillsPage();
         BrowserUtils.waitFor(4);
-        payBillsPage.amountBox.sendKeys("20");
-        payBillsPage.payButton.click();
-        BrowserUtils.waitFor(3);
-        Alert alert = Driver.get().switchTo().alert();
-        System.out.println(Driver.get().switchTo().alert().getText());
+        payBillsPage.amountBox.sendKeys("asfas!!!f");
+        payBillsPage.dateBox.sendKeys("sdfsd");
 
-//        if(payBillsPage.amountBox.getAttribute("value").equals("null")||payBillsPage.dateBox.getAttribute("value").equals("null")){
+        Assert.assertEquals("null", payBillsPage.amountBox.getAttribute("value"));
+//        bu kisim fail oluyor cunku bu karakterleri kabul etmemesi lazim, ama ettigi icin value bos gelmiyor, dolayisi
+//        ile bug var
+
+        Assert.assertEquals("null",payBillsPage.dateBox.getAttribute("value"));
 
 
-//        }
+
+
     }
 
     @When("users click Savings link")
@@ -367,6 +366,7 @@ public class AccountPage_StepDefs {
 
     @When("the user enters description {string}")
     public void theUserEntersDescription(String arg0) {
+        arg0.toUpperCase();
         accountActivityPage.descriptionBox.sendKeys(arg0);
     }
 
@@ -519,5 +519,56 @@ public class AccountPage_StepDefs {
 
         Assert.assertTrue(isOnline);
 
+    }
+
+    @Then("the alert message should be displayed")
+    public void theAlertMessageShouldBeDisplayed() {
+        PayBillsPage payBillsPage = new PayBillsPage();
+        BrowserUtils.waitFor(4);
+        payBillsPage.amountBox.sendKeys("20.0");
+        payBillsPage.payButton.click();
+        BrowserUtils.waitFor(2);
+
+        String actualMessage = new PayBillsPage().dateBox.getAttribute("validationMessage");
+        String message="Please fill out this field.";
+        String expectedMessage = message;
+
+        Assert.assertEquals(actualMessage,expectedMessage);
+        payBillsPage.amountBox.clear();
+        payBillsPage.dateBox.sendKeys("2012-09-06");
+        payBillsPage.payButton.click();
+
+        String actualMessage2 = new PayBillsPage().amountBox.getAttribute("validationMessage");
+        String message2="Please fill out this field.";
+        String expectedMessage2 = message;
+        Assert.assertEquals(actualMessage,expectedMessage);
+    }
+
+    @Then("the results should show at least one result under Deposit")
+    public void theResultsShouldShowAtLeastOneResultUnderDeposit() {
+        PayBillsPage payBillsPage=new PayBillsPage();
+        List<WebElement> depositCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[3]"));
+        List<String> depositCellValues2=new ArrayList<>();
+        for (int i = 0; i < depositCellValues.size(); i++) {
+            depositCellValues2.add(depositCellValues.get(i).getText());
+        }
+
+        List<WebElement> withdrawalCellValues=driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[4]"));
+        List<String> withdrawalCellValues2=new ArrayList<>();
+        for (int i = 0; i < withdrawalCellValues.size(); i++) {
+            withdrawalCellValues2.add(withdrawalCellValues.get(i).getText());
+        }
+
+        System.out.println(depositCellValues2.toString());
+        System.out.println(withdrawalCellValues2.toString());
+        Assert.assertNotEquals(depositCellValues2.size(),0);
+        Assert.assertNotEquals(withdrawalCellValues2.size(),0);
+
+
+
+    }
+
+    @And("the results should show at least one result under Withdrawal")
+    public void theResultsShouldShowAtLeastOneResultUnderWithdrawal() {
     }
 }

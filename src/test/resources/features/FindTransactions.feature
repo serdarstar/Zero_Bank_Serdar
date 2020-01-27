@@ -5,9 +5,9 @@ Feature: Find Transactions in   Account    Activity
     When the user sends login info
     And the user logs in succesfully
     Given the user is on Account Activity page
+    Given the    user   accesses   the    Find   Transactions   tab
 
   Scenario:    Search date   range
-    Given  the    user   accesses   the    Find   Transactions   tab
     When the   user   enters date   range  from   "2012-09-01"  to "2012-09-06"
     And    clicks search
     Then results   table  should only   show   transactions   dates  between "2012-09-01"   to   "2012-09-06"
@@ -17,9 +17,8 @@ Feature: Find Transactions in   Account    Activity
     Then results   table  should only   show  the transactions   dates  between "2012-09-02"   to   "2012-09-06"
     And the    results    table  should only   not    contain    transactions dated "2012-09-01"
 
-  @acc
+
   Scenario: search
-    Given the    user   accesses   the    Find   Transactions   tab
     When the user enters description "ONLINE"
     And clicks search
     Then the results should only have "ONLINE"
@@ -29,9 +28,18 @@ Feature: Find Transactions in   Account    Activity
     And the results table should not show descriptions containing "OFFICE"
 
   Scenario: Search description case insensitive
-    Given the    user   accesses   the    Find   Transactions   tab
     When the user enters description "ONLINE"
     And clicks search
     Then the results should only have "ONLINE"
-    When the user enters description "offline"
-    Then the    results    table  should only   not    contain    transactions dated "offline"
+    When the user enters description "online"
+    And clicks search
+    Then the results table should not show descriptions containing "online"
+#    en son kisim fail oluyor cunku description box case insensitive degil, ONLINE yerine online yazinca sonuc bulmuyor, bug var
+  @acc
+  Scenario: Type
+    When clicks search
+    Then the results should show at least one result under Deposit
+    And the results should show at least one result under Withdrawal
+
+
+

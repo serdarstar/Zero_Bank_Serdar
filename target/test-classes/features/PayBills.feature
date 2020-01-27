@@ -17,10 +17,11 @@ Feature: Pay Bills
 
   Scenario: Alphabetic and numeric input
     Then Amount and date should be correct type
-#    //not finished When	user	tries	to	make	a	payment	without	entering	the	amount	or	date,
-#  Please	fill	out	this	field	message! should	be	displayed.
-#  Amount	field	should	not	accept	alphabetical	or	special	characters.	Date	field	should
-#  not	accept	alphabetical	characters kismi yapilacak
+
+  Scenario: Alert message
+    Then the alert message should be displayed
+
+
 
 
 

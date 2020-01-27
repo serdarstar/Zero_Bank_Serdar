@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7431009400,
+              "duration": 10683334500,
               "status": "passed"
             },
             "line": 4,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 178437400,
+              "duration": 396323900,
               "status": "passed"
             },
             "line": 5,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 1034318000,
+              "duration": 1460856900,
               "status": "passed"
             },
             "line": 6,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 575208500,
+              "duration": 956543900,
               "status": "passed"
             },
             "line": 7,
@@ -56,19 +56,31 @@
               "location": "AccountPage_StepDefs.theUserIsOnAccountActivityPage()"
             },
             "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1222201700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the    user   accesses   the    Find   Transactions   tab",
+            "match": {
+              "location": "AccountPage_StepDefs.theUserAccessesTheFindTransactionsTab()"
+            },
+            "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2020-01-27T00:34:29.046Z",
-        "line": 21,
-        "name": "search",
+        "start_timestamp": "2020-01-27T14:49:19.881Z",
+        "line": 39,
+        "name": "Type",
         "description": "",
-        "id": "find-transactions-in---account----activity;search",
+        "id": "find-transactions-in---account----activity;type",
         "after": [
           {
             "result": {
-              "duration": 3653280000,
+              "duration": 3809213600,
               "status": "passed"
             },
             "match": {
@@ -81,127 +93,37 @@
         "steps": [
           {
             "result": {
-              "duration": 1079157300,
+              "duration": 2177245200,
               "status": "passed"
             },
-            "line": 22,
-            "name": "the    user   accesses   the    Find   Transactions   tab",
+            "line": 40,
+            "name": "clicks search",
             "match": {
-              "location": "AccountPage_StepDefs.theUserAccessesTheFindTransactionsTab()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2102839400,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "the user enters description \"ONLINE\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"ONLINE\"",
-                  "offset": 28
-                }
-              ],
-              "location": "AccountPage_StepDefs.theUserEntersDescription(String)"
+              "location": "AccountPage_StepDefs.clicksSearch()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2071609800,
+              "duration": 405476900,
               "status": "passed"
             },
-            "line": 24,
-            "name": "clicks search",
+            "line": 41,
+            "name": "the results should show at least one result under Deposit",
             "match": {
-              "location": "AccountPage_StepDefs.clicksSearch()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2115771800,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "the results should only have \"ONLINE\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"ONLINE\"",
-                  "offset": 29
-                }
-              ],
-              "location": "AccountPage_StepDefs.theResultsShouldOnlyHave(String)"
+              "location": "AccountPage_StepDefs.theResultsShouldShowAtLeastOneResultUnderDeposit()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2072259000,
+              "duration": 65300,
               "status": "passed"
             },
-            "line": 26,
-            "name": "the user enters description \"OFFICE\"",
+            "line": 42,
+            "name": "the results should show at least one result under Withdrawal",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"OFFICE\"",
-                  "offset": 28
-                }
-              ],
-              "location": "AccountPage_StepDefs.theUserEntersDescription(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2049241300,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "clicks search",
-            "match": {
-              "location": "AccountPage_StepDefs.clicksSearch()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2070513500,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "the results should only have \"OFFICE\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"OFFICE\"",
-                  "offset": 29
-                }
-              ],
-              "location": "AccountPage_StepDefs.theResultsShouldOnlyHave(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2030819800,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "the results table should not show descriptions containing \"OFFICE\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"OFFICE\"",
-                  "offset": 58
-                }
-              ],
-              "location": "AccountPage_StepDefs.theResultsTableShouldNotShowDescriptionsContaining(String)"
+              "location": "AccountPage_StepDefs.theResultsShouldShowAtLeastOneResultUnderWithdrawal()"
             },
             "keyword": "And "
           }
