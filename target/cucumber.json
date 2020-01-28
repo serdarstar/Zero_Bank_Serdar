@@ -1,9 +1,9 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "line": 3,
+        "line": 4,
         "name": "",
         "description": "",
         "type": "background",
@@ -11,10 +11,10 @@
         "steps": [
           {
             "result": {
-              "duration": 7521545300,
+              "duration": 7430514100,
               "status": "passed"
             },
-            "line": 4,
+            "line": 5,
             "name": "the user sign in succesfully",
             "match": {
               "location": "LoginStepDefs.theUserSignInSuccesfully()"
@@ -23,10 +23,10 @@
           },
           {
             "result": {
-              "duration": 170323400,
+              "duration": 177417500,
               "status": "passed"
             },
-            "line": 5,
+            "line": 6,
             "name": "the user sends login info",
             "match": {
               "location": "LoginStepDefs.theUserSendsLoginInfo()"
@@ -35,10 +35,10 @@
           },
           {
             "result": {
-              "duration": 1006717000,
+              "duration": 966312800,
               "status": "passed"
             },
-            "line": 6,
+            "line": 7,
             "name": "the user logs in succesfully",
             "match": {
               "location": "LoginStepDefs.theUserLogsInSuccesfully()"
@@ -47,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 620580400,
+              "duration": 552852100,
               "status": "passed"
             },
-            "line": 7,
+            "line": 8,
             "name": "the user is on Account Activity page",
             "match": {
               "location": "AccountPage_StepDefs.theUserIsOnAccountActivityPage()"
@@ -59,28 +59,28 @@
           },
           {
             "result": {
-              "duration": 326095800,
+              "duration": 1079143500,
               "status": "passed"
             },
-            "line": 8,
-            "name": "the user navigates to pay bill tab",
+            "line": 9,
+            "name": "the    user   accesses   the    Find   Transactions   tab",
             "match": {
-              "location": "AccountPage_StepDefs.theUserNavigatesToPayBillTab()"
+              "location": "AccountPage_StepDefs.theUserAccessesTheFindTransactionsTab()"
             },
-            "keyword": "Then "
+            "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2020-01-27T18:04:54.148Z",
-        "line": 32,
-        "name": "Error message for not entering value",
+        "start_timestamp": "2020-01-28T11:02:07.240Z",
+        "line": 11,
+        "name": "Search date   range",
         "description": "",
-        "id": "purchase-foreign-currency;error-message-for-not-entering-value",
+        "id": "find-transactions-in---account----activity;search-date---range",
         "after": [
           {
             "result": {
-              "duration": 3700686600,
+              "duration": 3621337100,
               "status": "passed"
             },
             "match": {
@@ -93,39 +93,145 @@
         "steps": [
           {
             "result": {
-              "duration": 80354100,
+              "duration": 248733900,
               "status": "passed"
             },
-            "line": 33,
-            "name": "the user is on the Purchase Foreign Currency tab",
+            "line": 12,
+            "name": "the   user   enters date   range  from   \"2012-09-01\"  to \"2012-09-06\"",
             "match": {
-              "location": "AccountPage_StepDefs.theUserIsOnThePurchaseForeignCurrencyTab()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2217214200,
-              "status": "passed"
-            },
-            "line": 34,
-            "name": "the user tries to calculate cost without entering value",
-            "match": {
-              "location": "AccountPage_StepDefs.theUserTriesToCalculateCostWithoutEnteringValue()"
+              "arguments": [
+                {
+                  "val": "\"2012-09-01\"",
+                  "offset": 41
+                },
+                {
+                  "val": "\"2012-09-06\"",
+                  "offset": 58
+                }
+              ],
+              "location": "AccountPage_StepDefs.theUserEntersDateRangeFromTo(String,String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2011688400,
+              "duration": 2073756200,
               "status": "passed"
             },
-            "line": 35,
-            "name": "error message should be displayed",
+            "line": 13,
+            "name": "clicks search",
             "match": {
-              "location": "AccountPage_StepDefs.errorMessageShouldBeDisplayed()"
+              "location": "AccountPage_StepDefs.clicksSearch()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4252668900,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "results   table  should only   show   transactions   dates  between \"2012-09-01\"   to   \"2012-09-06\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2012-09-01\"",
+                  "offset": 68
+                },
+                {
+                  "val": "\"2012-09-06\"",
+                  "offset": 88
+                }
+              ],
+              "location": "AccountPage_StepDefs.resultsTableShouldOnlyShowTransactionsDatesBetweenTo(String,String)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3176067100,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the    results    should be sorted by most   recent date",
+            "match": {
+              "location": "AccountPage_StepDefs.theResultsShouldBeSortedByMostRecentDate()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 163201500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the   user   enters date   range  from   \"2012-09-02\"  to \"2012-09-06\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2012-09-02\"",
+                  "offset": 41
+                },
+                {
+                  "val": "\"2012-09-06\"",
+                  "offset": 58
+                }
+              ],
+              "location": "AccountPage_StepDefs.theUserEntersDateRangeFromTo(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2062327500,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks search",
+            "match": {
+              "location": "AccountPage_StepDefs.clicksSearch()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4126292200,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "results   table  should only   show  the transactions   dates  between \"2012-09-02\"   to   \"2012-09-06\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2012-09-02\"",
+                  "offset": 71
+                },
+                {
+                  "val": "\"2012-09-06\"",
+                  "offset": 91
+                }
+              ],
+              "location": "AccountPage_StepDefs.resultsTableShouldOnlyShowTheTransactionsDatesBetweenTo(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4107623500,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the    results    table  should only   not    contain    transactions dated \"2012-09-01\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2012-09-01\"",
+                  "offset": 76
+                }
+              ],
+              "location": "AccountPage_StepDefs.theResultsTableShouldOnlyNotContainTransactionsDated(String)"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
@@ -135,11 +241,11 @@
         ]
       }
     ],
-    "name": "Purchase foreign currency",
+    "name": "Find Transactions in   Account    Activity",
     "description": "",
-    "id": "purchase-foreign-currency",
+    "id": "find-transactions-in---account----activity",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/Purchase%20Foreign%20Currency.feature",
+    "uri": "file:src/test/resources/features/FindTransactions.feature",
     "tags": []
   }
 ]

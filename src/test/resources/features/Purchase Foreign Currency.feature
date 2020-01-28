@@ -1,3 +1,4 @@
+
 Feature: Purchase foreign currency
 
   Background:
@@ -28,7 +29,7 @@ Feature: Purchase foreign currency
       Given the user is on the Purchase Foreign Currency tab
       When the user tries to calculate cost without selecting a currency
       Then error message should be displayed
-  @acc
+
   Scenario: Error message for not entering value
     Given the user is on the Purchase Foreign Currency tab
     When the user tries to calculate cost without entering value

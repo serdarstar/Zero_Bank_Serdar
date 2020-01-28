@@ -78,7 +78,8 @@ public class AccountPage_StepDefs {
 
     @Then("Account dropdown menu items must be verified")
     public void accountDropdownMenuItemsMustBeVerified() {
-        Select select = new Select(Driver.get().findElement(By.id("aa_accountId")));
+        WebElement webElement=Driver.get().findElement(By.id("aa_accountId"));
+        Select select = new Select(webElement);
         List<WebElement> accountDropdownOptions = select.getOptions();
         List<String> accountDropdownOptionsExpected = new ArrayList<>(Arrays.asList("Savings", "Checking", "Loan", "Credit Card", "Brokerage"));
         for (int i = 0; i < accountDropdownOptions.size(); i++) {
@@ -92,7 +93,7 @@ public class AccountPage_StepDefs {
         AccountActivityPage accountActivityPage = new AccountActivityPage();
         BrowserUtils.waitFor(4);
         List<WebElement> transactionTableColumns = Driver.get().findElements(By.xpath("//table/thead/tr/th"));
-        List<String> transactionTableColumnsExpected = new ArrayList<>(Arrays.asList("Date", "Description", "Deposits", "Withdrawals"));
+        List<String> transactionTableColumnsExpected = new ArrayList<>(Arrays.asList("Date", "Description", "Deposit", "Withdrawal"));
         for (int i = 0; i < transactionTableColumns.size(); i++) {
             Assert.assertEquals(transactionTableColumnsExpected.get(i), transactionTableColumns.get(i).getText());
         }
@@ -258,13 +259,20 @@ public class AccountPage_StepDefs {
     @Then("results   table  should only   show   transactions   dates  between {string}   to   {string}")
     public void resultsTableShouldOnlyShowTransactionsDatesBetweenTo(String date1, String date2) throws ParseException {
         AccountActivityPage accountActivityPage = new AccountActivityPage();
-        System.out.println(accountActivityPage.fromDate.getAttribute("value"));
-        System.out.println(accountActivityPage.toDate.getAttribute("value"));
 
-        int fromDateint = Integer.parseInt(accountActivityPage.fromDate.getAttribute("value").replace("-", ""));
-        int toDate = Integer.parseInt(accountActivityPage.toDate.getAttribute("value").replace("-", ""));
+        //Bu kisim deneme amacli, webelementsi vs method ile AccountaActivity page den cagirmak icin
+//        System.out.println(".......................................");
+//        System.out.println(accountActivityPage.fromDate.getAttribute("value"));
+//        System.out.println(accountActivityPage.toDate.getAttribute("value"));
+//        System.out.println(".......................................");
+        //Bu kisim deneme amacli, webelementsi vs method ile AccountaActivity page den cagirmak icin
+
+        int fromDateint = accountActivityPage.fromdateInt(date1);
+        int toDate = accountActivityPage.fromdateInt(date2);
         BrowserUtils.waitFor(4);
-        List<WebElement> Date = Driver.get().findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[1]"));
+        System.out.println(accountActivityPage.getElements(accountActivityPage.getTableColumns));
+
+        List<WebElement> Date = driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[1]"));
         int columnData = 0;
 
         List<Integer> columnsValues = new ArrayList<>();

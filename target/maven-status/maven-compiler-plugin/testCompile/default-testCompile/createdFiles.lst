@@ -1,5 +1,5 @@
-com\zerobank\utilities\Driver.class
 com\zerobank\utilities\BrowserUtils$1.class
 com\zerobank\utilities\BrowserUtils.class
+com\zerobank\utilities\Driver.class
 com\zerobank\runners\CukesRunner.class
 com\zerobank\utilities\ConfigurationReader.class

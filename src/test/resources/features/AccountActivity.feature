@@ -1,3 +1,4 @@
+
 Feature: Account Activity
 
   Background:
@@ -12,11 +13,11 @@ Feature: Account Activity
 
   Scenario:Default dropdown
     Then Default dropdown should be Savings
-
+@fail
   Scenario: Dropdown options
     Then Account dropdown menu items must be verified
 
-
+@fail
   Scenario:Transaction table
   //not finished
     Then transaction table columns should be verified
