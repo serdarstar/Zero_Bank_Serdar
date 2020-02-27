@@ -1,4 +1,4 @@
-
+@smoke
 Feature: Account Activity
 
   Background:
@@ -6,14 +6,14 @@ Feature: Account Activity
     When the user sends login info
     And the user logs in succesfully
     Given the user is on Account Activity page
-  @acc
+  @smoke
   Scenario: Page title
     And Account activity page title must be verified
 
 
   Scenario:Default dropdown
     Then Default dropdown should be Savings
-@fail
+@smoke
   Scenario: Dropdown options
     Then Account dropdown menu items must be verified
 
