@@ -8,7 +8,7 @@ Feature: Purchase foreign currency
     Given the user is on Account Activity page
     Then the user navigates to pay bill tab
 
-
+@tes
   Scenario: Available	currencies
     Given the user is on the Purchase Foreign Currency tab
     Then the following options should be available

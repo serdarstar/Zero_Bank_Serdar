@@ -2,6 +2,7 @@ package com.zerobank.stepdefinitions;
 
 import com.zerobank.pages.LoginPage;
 import com.zerobank.pages.SignInPage;
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -27,6 +28,7 @@ public class LoginStepDefs {
         LoginPage loginPage=new LoginPage();
         loginPage.loginButton.sendKeys("username");
         loginPage.passwordButton.sendKeys(ConfigurationReader.get("password"));
+
     }
 
     @Then("the user logs in succesfully")

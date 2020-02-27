@@ -267,71 +267,71 @@ public class AccountPage_StepDefs {
 //        System.out.println(".......................................");
         //Bu kisim deneme amacli, webelementsi vs method ile AccountaActivity page den cagirmak icin
 
-        int fromDateint = accountActivityPage.fromdateInt(date1);
-        int toDate = accountActivityPage.fromdateInt(date2);
-        BrowserUtils.waitFor(4);
-        System.out.println(accountActivityPage.getElements(accountActivityPage.getTableColumns));
-
-        List<WebElement> Date = driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[1]"));
-        int columnData = 0;
-
-        List<Integer> columnsValues = new ArrayList<>();
-        for (int i = 0; i < Date.size(); i++) {
-
-            int columnsData = Integer.parseInt(Date.get(i).getText().replace("-", ""));
-            String[] strings1 = Date.get(i).getText().split("-");
-            String columnDataString = strings1[0].concat(strings1[1]).concat(strings1[2]);
-            columnData = Integer.parseInt(columnDataString);
-            columnsValues.add(columnData);
-            System.out.println(columnData);
-        }
-        System.out.println(columnsValues.toString());
-        int counter = 0;
-        for (int i = 0; i < columnsValues.size(); i++) {
-            if (columnsValues.get(i) <= toDate && columnsValues.get(i) >= fromDateint) {
-                counter++;
-            }
-            System.out.println(counter);
-        }
-
-        boolean isRange = false;
-        if (columnData >= Date.size()) {
-            isRange = true;
-        }
-
-        Assert.assertTrue(isRange);
+//        int fromDateint = accountActivityPage.fromdateInt(date1);
+//        int toDate = accountActivityPage.fromdateInt(date2);
+//        BrowserUtils.waitFor(4);
+//        System.out.println(accountActivityPage.getElements(accountActivityPage.getTableColumns));
+//
+//        List<WebElement> Date = driver.findElements(By.xpath("//div[@id='filtered_transactions_for_account']//td[1]"));
+//        int columnData = 0;
+//
+//        List<Integer> columnsValues = new ArrayList<>();
+//        for (int i = 0; i < Date.size(); i++) {
+//
+//            int columnsData = Integer.parseInt(Date.get(i).getText().replace("-", ""));
+//            String[] strings1 = Date.get(i).getText().split("-");
+//            String columnDataString = strings1[0].concat(strings1[1]).concat(strings1[2]);
+//            columnData = Integer.parseInt(columnDataString);
+//            columnsValues.add(columnData);
+//            System.out.println(columnData);
+//        }
+//        System.out.println(columnsValues.toString());
+//        int counter = 0;
+//        for (int i = 0; i < columnsValues.size(); i++) {
+//            if (columnsValues.get(i) <= toDate && columnsValues.get(i) >= fromDateint) {
+//                counter++;
+//            }
+//            System.out.println(counter);
+//        }
+//
+//        boolean isRange = false;
+//        if (columnData >= Date.size()) {
+//            isRange = true;
+//        }
+//
+//        Assert.assertTrue(isRange);
 
 
 //        BU SORUNUN 2. COZUMU
-//        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-mm-dd");
-//
-//        java.util.Date ndate1 = formatter1.parse(date1);
-//        Date ndate2 = formatter1.parse(date2);
-//
-//        List<String> actualDateList = BrowserUtils.getElementsText(new AccountActivityPage().dateColumnList);
-//        System.out.println("actualDateList = " + actualDateList);
-//
-//        List<Date> actualDates = new ArrayList<>();
-//        for (String dates : actualDateList) {
-//            Date ad = formatter1.parse(dates);
-//            actualDates.add(ad);
-//        }
-//
-//        int counter1 = 0;
-//        for(int i=0; i<actualDates.size(); i++){
-//            if(ndate1.compareTo(actualDates.get(i))<=0 && ndate2.compareTo(actualDates.get(i))>=0){
-//                counter1++;
-//            }
-//        }
-//        System.out.println(counter1);
-//
-//        boolean flag = false;
-//        if(counter1==actualDates.size()){
-//            flag =true;
-//        }
-//
-//        Assert.assertTrue(flag);
+        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-mm-dd");
 
+        Date ndate1 = formatter1.parse(date1);
+        Date ndate2 = formatter1.parse(date2);
+
+        List<String> actualDateList = BrowserUtils.getElementsText(new AccountActivityPage().dateColumnList);
+        System.out.println("actualDateList = " + actualDateList);
+
+        List<Date> actualDates = new ArrayList<>();
+        for (String dates : actualDateList) {
+            Date ad = formatter1.parse(dates);
+            actualDates.add(ad);
+        }
+
+        int counter1 = 0;
+        for(int i=0; i<actualDates.size(); i++){
+            if(ndate1.compareTo(actualDates.get(i))<=0 && ndate2.compareTo(actualDates.get(i))>=0){
+                counter1++;
+            }
+        }
+        System.out.println(counter1);
+
+        boolean flag = false;
+        if(counter1==actualDates.size()){
+            flag =true;
+        }
+
+        Assert.assertTrue(flag);
+//
 
     }
 

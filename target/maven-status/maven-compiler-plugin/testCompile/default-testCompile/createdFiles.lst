@@ -1,5 +1,14 @@
+com\zerobank\pages\PayBillsPage.class
+com\zerobank\pages\AccountSummaryPage.class
+com\zerobank\stepdefinitions\LoginStepDefs.class
 com\zerobank\utilities\BrowserUtils$1.class
 com\zerobank\utilities\BrowserUtils.class
+com\zerobank\pages\AccountActivityPage.class
+com\zerobank\pages\SignInPage.class
+com\zerobank\pages\BasePage.class
 com\zerobank\utilities\Driver.class
+com\zerobank\pages\LoginPage.class
+com\zerobank\stepdefinitions\AccountPage_StepDefs.class
+com\zerobank\stepdefinitions\Hooks.class
 com\zerobank\runners\CukesRunner.class
 com\zerobank\utilities\ConfigurationReader.class

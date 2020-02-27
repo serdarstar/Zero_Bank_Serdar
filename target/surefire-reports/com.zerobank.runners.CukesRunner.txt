@@ -1,10 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: com.zerobank.runners.CukesRunner
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 30.121 s <<< FAILURE! - in com.zerobank.runners.CukesRunner
-Dropdown options(Account Activity)  Time elapsed: 13.511 s  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<[Loan]> but was:<[Savings]>
-
-Transaction table(Account Activity)  Time elapsed: 16.043 s  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<Deposit[s]> but was:<Deposit[]>
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in com.zerobank.runners.CukesRunner
+initializationError(com.zerobank.runners.CukesRunner)  Time elapsed: 0.003 s  <<< ERROR!
+cucumber.runtime.CucumberException: Failed to parse resource at: file:src/test/resources/features/FindTransactions.feature
+Caused by: gherkin.ParserException$CompositeParserException: 
+Parser errors:
+(4:3): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Background:'
+(5:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given the user sign in succesfully'
+(6:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'When the user sends login info'
+(7:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'And the user logs in succesfully'
+(8:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given the user is on Account Activity page'
+(9:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given the    user   accesses   the    Find   Transactions   tab'
 
